@@ -1,0 +1,29 @@
+openapi: 3.0.0
+info:
+  title: TypeScript OpenAPI
+  description: OpenAPIを使ってTypeScriptで書かれたAPIのドキュメントを作成作ってみる
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:3000
+    description: local
+
+tags:
+  - name: help
+    description: ヘルプ系
+
+paths:
+  /:
+    get:
+      summary: Hello World
+      description: 接続確認用のパス
+      tags:
+        - help
+      responses:
+        '200':
+          description: アプリケーション名を返す
+          content:
+            text/plain:
+              schema:
+                type: string
+                example: TypeScript OpenAPI

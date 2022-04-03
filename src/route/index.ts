@@ -3,5 +3,6 @@ import { Router } from 'express';
 export const router = Router();
 
 router.get('/', (req, res, next) => {
-	res.send('typescript openapi');
+	res.type('text/plain')
+	res.send('TypeScript OpenAPI');
 });
