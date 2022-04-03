@@ -1,2 +1,3 @@
 # typescript-openapi
+
 OpenAPIを使ってTypeScriptで書かれたAPIのドキュメントを作成作ってみる
