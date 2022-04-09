@@ -18,7 +18,7 @@ http://localhost:3000/swagger-ui/
 
 ## Development
 
-以下は、Swaggerを用いた
+以下は、Swaggerを用いたスキーマ駆動開発の場合の手順である。
 
 ### 1. APIのインターフェースを定義する
 
