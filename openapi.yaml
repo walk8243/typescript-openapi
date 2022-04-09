@@ -1,4 +1,4 @@
-openapi: 3.0.0
+openapi: 3.0.3
 info:
   title: TypeScript OpenAPI
   description: OpenAPIを使ってTypeScriptで書かれたAPIのドキュメントを作成作ってみる
@@ -27,3 +27,28 @@ paths:
               schema:
                 type: string
                 example: TypeScript OpenAPI
+  /api-docs:
+    get:
+      summary: SwaggerAPI Docs
+      description: SwaggerによるAPIの定義書
+      tags:
+        - help
+      parameters:
+        - name: type
+          in: query
+          schema:
+            type: string
+            enum:
+              - json
+              - yaml
+          description: 返却するAPI Docsの型
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+            text/yaml:
+              schema:
+                type: string
