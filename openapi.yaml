@@ -39,10 +39,7 @@ paths:
         - name: type
           in: query
           schema:
-            type: string
-            enum:
-              - json
-              - yaml
+            $ref: '#/components/schemas/DocsDataType'
           description: 返却するAPI Docsの型
       responses:
         '200':
@@ -69,6 +66,11 @@ paths:
 
 components:
   schemas:
+    DocsDataType:
+      type: string
+      enum:
+        - json
+        - yaml
     DateTime:
       type: object
       properties:

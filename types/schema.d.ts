@@ -23,7 +23,7 @@ export interface paths {
       parameters: {
         query: {
           /** 返却するAPI Docsの型 */
-          type?: "json" | "yaml";
+          type?: components["schemas"]["DocsDataType"];
         };
       };
       responses: {
@@ -53,6 +53,8 @@ export interface paths {
 
 export interface components {
   schemas: {
+    /** @enum {string} */
+    DocsDataType: "json" | "yaml";
     DateTime: {
       /**
        * Format: date-fullyear "/" date-month "/" date-mday " " partial-time

@@ -3,6 +3,7 @@ import * as swaggerUI from 'swagger-ui-express';
 import * as jsYaml from 'js-yaml';
 import fs from 'fs';
 import path from 'path';
+import { components } from '../types/schema';
 
 const openApiSchema = jsYaml.load(fs.readFileSync(path.resolve(__dirname, '../openapi.yaml'), 'utf8'));
 
@@ -30,5 +31,5 @@ function checkSwaggerDoc(schema: any): schema is swaggerUI.JsonObject {
 }
 
 interface SwaggerDocsRequest {
-	type: 'json' | 'yaml' | undefined;
+	type: components['schemas']['DocsDataType'] | undefined;
 }
