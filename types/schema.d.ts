@@ -55,51 +55,54 @@ export interface components {
   schemas: {
     DateTime: {
       /**
+       * Format: date-fullyear "/" date-month "/" date-mday " " partial-time
        * @description 現在時刻
        * @example 2022/02/22 12:00:00
        */
-      datetime?: string;
+      datetime: string;
       /**
+       * Format: full-date "T" partial-time time-numoffset
        * @description オフセット付き現在時刻
        * @example 2022-01-22T03:00:00.000Z
        */
-      offset?: string;
+      offset: string;
       /**
+       * Format: full-date
        * @description 日付
        * @example 2022-01-22T00:00:00.000Z
        */
-      calender?: string;
+      calender: string;
       /** @description タイムスタンプ */
-      timestamp?: number;
+      timestamp: number;
       /**
        * @description 年
        * @example 2022
        */
-      year?: number;
+      year: number;
       /**
        * @description 月
        * @example 1
        */
-      month?: number;
+      month: number;
       /**
        * @description 日
        * @example 1
        */
-      date?: number;
+      date: number;
       /**
        * @description 曜日
        * @example 日
        */
-      day?: string;
+      day: string;
       /**
        * @description 時（24時間制）
        * @example 1
        */
-      hour?: number;
+      hour: number;
       /** @description 分 */
-      minute?: number;
+      minute: number;
       /** @description 秒 */
-      second?: number;
+      second: number;
     };
   };
 }

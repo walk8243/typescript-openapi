@@ -76,14 +76,17 @@ components:
           type: string
           description: 現在時刻
           example: 2022/02/22 12:00:00
+          format: date-fullyear "/" date-month "/" date-mday " " partial-time
         offset:
           type: string
           description: オフセット付き現在時刻
           example: 2022-01-22T12:00:00+09:00
+          format: full-date "T" partial-time time-numoffset
         calender:
           type: string
           description: 日付
           example: 2022-01-22
+          format: full-date
         timestamp:
           type: integer
           description: タイムスタンプ
@@ -115,3 +118,15 @@ components:
           type: integer
           description: 秒
           example: 0
+      required:
+        - datetime
+        - offset
+        - calender
+        - timestamp
+        - year
+        - month
+        - date
+        - day
+        - hour
+        - minute
+        - second
