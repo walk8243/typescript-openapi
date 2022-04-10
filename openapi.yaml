@@ -11,6 +11,8 @@ servers:
 tags:
   - name: help
     description: ヘルプ系
+  - name: util
+    description: 便利ツール系
 
 paths:
   /:
@@ -52,3 +54,64 @@ paths:
             text/yaml:
               schema:
                 type: string
+  /util/now:
+    get:
+      summary: 現在時刻
+      tags:
+        - util
+      responses:
+        '200':
+          description: 様々な種類の現在時刻
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/DateTime'
+
+components:
+  schemas:
+    DateTime:
+      type: object
+      properties:
+        datetime:
+          type: string
+          description: 現在時刻
+          example: 2022/02/22 12:00:00
+        offset:
+          type: string
+          description: オフセット付き現在時刻
+          example: 2022-01-22T12:00:00+09:00
+        calender:
+          type: string
+          description: 日付
+          example: 2022-01-22
+        timestamp:
+          type: integer
+          description: タイムスタンプ
+        year:
+          type: integer
+          description: 年
+          example: 2022
+        month:
+          type: integer
+          description: 月
+          example: 1
+        date:
+          type: integer
+          description: 日
+          example: 1
+        day:
+          type: string
+          description: 曜日
+          example: 日
+        hour:
+          type: integer
+          description: 時（24時間制）
+          example: 1
+        minute:
+          type: integer
+          description: 分
+          example: 0
+        second:
+          type: integer
+          description: 秒
+          example: 0

@@ -1,8 +1,8 @@
-import { Router } from 'express';
+import { Response, Router } from 'express';
 
 export const router = Router();
 
-router.get('/', (req, res, next) => {
+router.get('/', (_, res: Response<string>) => {
 	res.type('text/plain')
 	res.send('TypeScript OpenAPI');
 });

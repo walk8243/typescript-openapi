@@ -2,6 +2,7 @@ import express from 'express';
 import { router as swaggerRouter } from './swagger';
 
 import { router as indexRouter } from './route/index';
+import { router as utilRouter } from './route/util';
 
 export const app = express();
 
@@ -13,7 +14,8 @@ app
 
 app
 	.use(swaggerRouter)
-	.use('/', indexRouter);
+	.use('/', indexRouter)
+	.use('/util', utilRouter);
 
 app
 	.use((req, res, next) => {
